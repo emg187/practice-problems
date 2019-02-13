@@ -51,30 +51,24 @@ function getMinMaxMean(array){
 
 function findMode(array){
 
-    var mode;
+    var mode;4
+    var modeAppearances = 0;
 
     for (var arrayIndex=0; arrayIndex<array.length; arrayIndex++) {
-        mode = array[arrayIndex];
-        var modeAppearances;
 
+        var howManyTimes = 0;
         for (var counter=0; counter<array.length; counter++) {
-            var howManyTimes = 0;
             if (array[arrayIndex] === array[counter]) {
                 howManyTimes++;
             }
         }
 
-        modeAppearances = howManyTimes;
+        if (howManyTimes>=modeAppearances) {
+            modeAppearances = howManyTimes;
+            mode = array[arrayIndex];
+        }
     }
 
     return mode;
 }
 
-
-
-/*
-i need: 
-something to contain the number of times the current index I'm checking appears (howManyTimes)
-something to 
-
-*/
